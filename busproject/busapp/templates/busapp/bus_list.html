@@ -1,0 +1,12 @@
+<h2>student registration and bus assignment</h2>
+<a href="{% url 'register_bus' %}">+ Register New Bus</a> |
+<a href="{% url 'register_student' %}">+ Register New Student</a>
+<ul>
+  {% for bus in buses %}
+    <li>
+      {{ bus }} - Capacity: {{ bus.capacity }} |
+      <a href="{% url 'bus_attendance' bus.id %}">View Attendance</a> |
+      <a href="{% url 'mark_attendance' bus.id %}">Mark Attendance</a>
+    </li>
+  {% endfor %}
+</ul>

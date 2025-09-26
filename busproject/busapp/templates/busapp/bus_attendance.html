@@ -1,0 +1,17 @@
+<h2>Attendance for {{ bus }} on {{ today }}</h2>
+<a href="{% url 'mark_attendance' bus.id %}">Mark Attendance</a>
+<table>
+  <tr><th>Student</th><th>Status</th></tr>
+  {% for record in attendance_data %}
+    <tr>
+      <td>{{ record.student.name }}</td>
+      <td>
+        {% if record.present == True %} Present
+        {% elif record.present == False %} Absent
+        {% else %} Not Marked
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'bus_list' %}">Back to Bus List</a>
