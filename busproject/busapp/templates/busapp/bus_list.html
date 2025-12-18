@@ -21,6 +21,10 @@
             <div class="text-end">
               <a class="btn btn-sm btn-outline-secondary mb-2" href="{% url 'bus_attendance' bus.id %}">View Attendance</a>
               <a class="btn btn-sm btn-success" href="{% url 'mark_attendance' bus.id %}">Mark</a>
+              <form method="post" action="{% url 'delete_bus' bus.id %}" class="d-inline-block ms-2">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this bus? This will remove associated students.');">Delete</button>
+              </form>
             </div>
           </div>
         </div>

@@ -27,6 +27,13 @@ def register_student(request):
         form = StudentForm()
     return render(request, 'busapp/register_student.html', {'form': form})
 
+def delete_bus(request, bus_id):
+    bus = get_object_or_404(Bus, id=bus_id)
+    if request.method == 'POST':
+        bus.delete()
+        return redirect('bus_list')
+    return redirect('bus_list')
+
 def bus_attendance(request, bus_id):
     bus = get_object_or_404(Bus, id=bus_id)
     students = bus.students.all()
