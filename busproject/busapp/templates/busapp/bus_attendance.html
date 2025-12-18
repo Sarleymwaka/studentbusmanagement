@@ -1,17 +1,41 @@
-<h2>Attendance for {{ bus }} on {{ today }}</h2>
-<a href="{% url 'mark_attendance' bus.id %}">Mark Attendance</a>
-<table>
-  <tr><th>Student</th><th>Status</th></tr>
-  {% for record in attendance_data %}
-    <tr>
-      <td>{{ record.student.name }}</td>
-      <td>
-        {% if record.present == True %} Present
-        {% elif record.present == False %} Absent
-        {% else %} Not Marked
-        {% endif %}
-      </td>
-    </tr>
-  {% endfor %}
-</table>
-<a href="{% url 'bus_list' %}">Back to Bus List</a>
+{% extends 'busapp/base.html' %}
+{% block title %}Attendance — {{ bus }}{% endblock %}
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">Attendance — {{ bus }}</h4>
+    <small class="text-muted">{{ today }}</small>
+  </div>
+
+  <div class="mb-3">
+    <a class="btn btn-sm btn-success" href="{% url 'mark_attendance' bus.id %}">Mark Attendance</a>
+    <a class="btn btn-sm btn-link" href="{% url 'bus_list' %}">Back to Buses</a>
+  </div>
+
+  <div class="card card-shadow">
+    <div class="card-body p-0">
+      <table class="table mb-0">
+        <thead class="table-light">
+          <tr><th>Student</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          {% for record in attendance_data %}
+            <tr>
+              <td>{{ record.student.name }}</td>
+              <td>
+                {% if record.present == True %}
+                  <span class="badge bg-success">Present</span>
+                {% elif record.present == False %}
+                  <span class="badge bg-danger">Absent</span>
+                {% else %}
+                  <span class="text-muted">Not Marked</span>
+                {% endif %}
+              </td>
+            </tr>
+          {% empty %}
+            <tr><td colspan="2" class="text-center py-3">No attendance records found.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

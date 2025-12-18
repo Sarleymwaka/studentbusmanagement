@@ -49,24 +49,30 @@ def bus_attendance(request, bus_id):
 def mark_attendance(request, bus_id):
     bus = get_object_or_404(Bus, id=bus_id)
     students = bus.students.all()
+    today = date.today()
 
     if request.method == 'POST':
-        form = AttendanceForm(request.POST, students)
+        form = AttendanceForm(request.POST, students=students)
         if form.is_valid():
             for student in students:
                 value = form.cleaned_data.get(f'student_{student.id}')
                 is_present = (value == 'present')
                 Attendance.objects.update_or_create(
                     student=student,
-                    date=date.today(),
+                    date=today,
                     defaults={'present': is_present}
                 )
             return redirect('bus_attendance', bus_id=bus.id)
     else:
-        form = AttendanceForm()
+        initial = {}
+        for student in students:
+            attendance = Attendance.objects.filter(student=student, date=today).first()
+            if attendance is not None:
+                initial[f'student_{student.id}'] = 'present' if attendance.present else 'absent'
+        form = AttendanceForm(students=students, initial=initial)
 
     return render(request, 'busapp/mark_attendance.html', {
         'bus': bus,
         'form': form,
-        'today': date.today()
+        'today': today
     })

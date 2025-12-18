@@ -12,12 +12,13 @@ class StudentForm(forms.ModelForm):
         fields = ['name', 'grade', 'bus']
 
 class AttendanceForm(forms.Form):
-    def _init_(self, *args, **kwargs):
-        students = kwargs.pop('students')
-        super()._init_(*args, **kwargs)
+    def __init__(self, *args, students=None, **kwargs):
+        students = students or []
+        super().__init__(*args, **kwargs)
         for student in students:
             self.fields[f'student_{student.id}'] = forms.ChoiceField(
                 label=student.name,
                 choices=[('present', 'Present'), ('absent', 'Absent')],
-                widget=forms.RadioSelect
+                widget=forms.RadioSelect,
+                required=False
             )
