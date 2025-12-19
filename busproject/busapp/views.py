@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Bus, Student, Attendance
 from .forms import BusForm, StudentForm, AttendanceForm
 from datetime import date
+from django.http import HttpResponse
+import csv
 
 def bus_list(request):
     buses = Bus.objects.all()
@@ -83,3 +85,53 @@ def mark_attendance(request, bus_id):
         'form': form,
         'today': today
     })
+
+def daily_attendance_overview(request):
+    buses = Bus.objects.all()
+    today = date.today()
+    attendance_summary = []
+
+    for bus in buses:
+        students = bus.students.all()
+        present_count = 0
+        total_students = students.count()
+        student_attendance = []
+
+        for student in students:
+            attendance = Attendance.objects.filter(student=student, date=today).first()
+            is_present = attendance.present if attendance else False
+            if is_present:
+                present_count += 1
+            student_attendance.append({
+                'student': student,
+                'present': is_present,
+            })
+
+        attendance_summary.append({
+            'bus': bus,
+            'students': student_attendance,
+            'present_count': present_count,
+            'total_students': total_students,
+        })
+
+    return render(request, 'busapp/daily_attendance_overview.html', {
+        'attendance_summary': attendance_summary,
+        'today': today
+    })
+
+def download_daily_attendance(request):
+    today = date.today()
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = f'attachment; filename="daily_attendance_{today}.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['Bus Number', 'Route', 'Student Name', 'Grade', 'Present'])
+
+    buses = Bus.objects.all()
+    for bus in buses:
+        for student in bus.students.all():
+            attendance = Attendance.objects.filter(student=student, date=today).first()
+            present = 'Yes' if (attendance and attendance.present) else 'No'
+            writer.writerow([bus.bus_number, bus.route, student.name, student.grade, present])
+
+    return response

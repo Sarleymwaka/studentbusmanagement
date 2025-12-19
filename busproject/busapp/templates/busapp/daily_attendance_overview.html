@@ -1,0 +1,54 @@
+{% extends 'busapp/base.html' %}
+{% block title %}Daily Attendance Overview — StudentBus{% endblock %}
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="h4 mb-0">Daily Attendance Overview - {{ today|date:"F j, Y" }}</h2>
+    <div>
+      <a class="btn btn-sm btn-outline-primary me-2" href="{% url 'bus_list' %}">Back to Buses</a>
+      <a class="btn btn-sm btn-success" href="{% url 'download_daily_attendance' %}">Download CSV</a>
+    </div>
+  </div>
+
+  {% for summary in attendance_summary %}
+    <div class="card card-shadow mb-4">
+      <div class="card-header">
+        <h5 class="mb-0">{{ summary.bus.bus_number }} — {{ summary.bus.route }}</h5>
+        <small class="text-muted">Present: {{ summary.present_count }} / {{ summary.total_students }}</small>
+      </div>
+      <div class="card-body">
+        {% if summary.students %}
+          <div class="table-responsive">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Grade</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for student_data in summary.students %}
+                  <tr>
+                    <td>{{ student_data.student.name }}</td>
+                    <td>{{ student_data.student.grade }}</td>
+                    <td>
+                      {% if student_data.present %}
+                        <span class="badge bg-success">Present</span>
+                      {% else %}
+                        <span class="badge bg-danger">Absent</span>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% else %}
+          <p class="text-muted mb-0">No students assigned to this bus.</p>
+        {% endif %}
+      </div>
+    </div>
+  {% empty %}
+    <div class="alert alert-info">No buses registered yet.</div>
+  {% endfor %}
+{% endblock %}

@@ -18,7 +18,53 @@ It allows teachers to mark attendance, manage bus registration, and analyze atte
 
 ---
 
-## 📸 Screenshots
+## 🚀 Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Sarleymwaka/studentbusmanagement.git
+   cd studentbusmanagement
+   ```
+
+2. **Navigate to the project directory:**
+   ```bash
+   cd busproject
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run database migrations:**
+   ```bash
+   python manage.py migrate
+   ```
+
+5. **Collect static files (for production):**
+   ```bash
+   python manage.py collectstatic --no-input
+   ```
+
+## 🏃‍♂️ Running the Application
+
+To start the development server:
+```bash
+python manage.py runserver
+```
+
+The application will be available at `http://127.0.0.1:8000/`
+
+## 📖 Usage
+
+- Access the dashboard to view overall statistics.
+- Register new students and buses.
+- Mark daily attendance for each bus.
+- View attendance reports.
+
+---
+
+## �📸 Screenshots
 
 | Student Registration | Marking Attendance |
 |---------------------|------------------|

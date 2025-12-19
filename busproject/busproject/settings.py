@@ -33,7 +33,10 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 # When accessing the dev server over HTTPS (e.g. https://localhost:8000),
 # add those origins here so Django's CSRF origin check allows POSTs.
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS','https://localhost:8000,https://127.0.0.1:8000').split(',')
+CSRF_TRUSTED_ORIGINS = os.getenv(
+    'CSRF_TRUSTED_ORIGINS', 
+    'https://your-app-name.onrender.com,https://localhost:8000,https://127.0.0.1:8000'
+).split(',')
 
 
 # Application definition
@@ -57,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'busproject.urls'
