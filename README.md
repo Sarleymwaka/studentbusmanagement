@@ -67,7 +67,7 @@ Export attendance records as CSV.
 ## 🚌 Register Buses
 Register buses in the system and manage available school transport.
 
-![Register Buses](https://github.com/user-attachments/assets/bus-registration-image)
+![Register Buses](screenshots/register bus.png)
 
 ---
 
