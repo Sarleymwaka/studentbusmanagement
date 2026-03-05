@@ -4,10 +4,11 @@ This system helps schools register students, manage buses, mark attendance, and 
 ---
 
 ## ✨ Features
-- 🧾 Student Registration – Add and manage student profiles  
-- 🚌 Bus Registration – add buses and assign students to buses  
-- ✅ Attendance Tracking – Mark attendance daily for each bus  
-- 📊 Dashboard
+- 🧾 **Student Registration** – Add and manage student profiles  
+- 🚌 **Bus Registration** – Register buses and assign students to buses  
+- ✅ **Attendance Tracking** – Mark daily attendance for each bus  
+- 📊 **Dashboard Overview** – View attendance summaries and reports  
+- 📥 **Export Reports** – Download attendance reports as CSV
 
 A web-based platform built to simplify student registration, attendance tracking, and school bus management.  
 It allows mark attendance, manage bus registration and analyze attendance data from a centralized dashboard.
