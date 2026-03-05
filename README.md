@@ -61,8 +61,6 @@ Export attendance records as CSV.
 
 ---
 
-## 📸 Screenshots
-
 # 📸 Screenshots
 
 ## 🚌 Register Buses
