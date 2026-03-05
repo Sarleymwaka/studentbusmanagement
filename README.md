@@ -74,7 +74,7 @@ Register buses in the system and manage available school transport.
 ## 👨‍🎓 Register Students & Assign to Buses
 Add new students and assign them to their respective school buses.
 
-![Register Students](screenshots/register student.PNG)
+![Register Buses](PASTE_COPIED_URL_HERE)
 
 ---
 
