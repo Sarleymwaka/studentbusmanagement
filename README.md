@@ -99,9 +99,9 @@ View attendance reports to monitor student bus usage.
 
 ## 🛠️ Tech Stack
 - Backend: Python, Django  
-- Database: postgresql
+- Database: postgresql(superbase)
 - Frontend: HTML, CSS, JavaScript
-- superbase
+  
 
 ---
 
