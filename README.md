@@ -67,7 +67,7 @@ Export attendance records as CSV.
 ## 🚌 Register Buses
 Register buses in the system and manage available school transport.
 
-![Register Buses](studentbusmanagement/screenshots/register bus.PNG)
+![Register Buses](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/register%20bus.PNG?raw=true)
 
 ---
 
@@ -81,21 +81,19 @@ Add new students and assign them to their respective school buses.
 ## ✅ Mark Daily Attendance
 Mark student attendance for each bus on a daily basis.
 
-![Mark Attendance](https://github.com/user-attachments/assets/attendance-marking-image)
+![Mark Attendance](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/mark%20attendance.PNG?raw=true)
 
 ---
 
 ## 📊 Attendance Overview Reports
-View summarized attendance reports from the dashboard.
+View attendance reports to monitor student bus usage.
 
-![Attendance Reports](https://github.com/user-attachments/assets/attendance-reports-image)
+![Attendance Reports](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/daily%20attendance%20overview.PNG?raw=true)
 
 ---
 
-## 📥 Export Attendance Records
-Export attendance records as **CSV files** for reporting and analysis.
-
-![Export CSV](https://github.com/user-attachments/assets/export-csv-image)
+## Dashboard
+![Dashboard](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/dashboard.PNG?raw=true)
 
 ---
 
