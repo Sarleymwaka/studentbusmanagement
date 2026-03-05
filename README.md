@@ -67,7 +67,7 @@ Export attendance records as CSV.
 ## 🚌 Register Buses
 Register buses in the system and manage available school transport.
 
-![Register Buses](screenshots/register bus.PNG)
+![Register Buses](busproject/screenshots/register bus.PNG)
 
 ---
 
@@ -101,8 +101,9 @@ Export attendance records as **CSV files** for reporting and analysis.
 
 ## 🛠️ Tech Stack
 - Backend: Python, Django  
-- Database: Superbase  
-- Frontend: HTML, CSS, JavaScript  
+- Database: postgresql
+- Frontend: HTML, CSS, JavaScript
+- superbase
 
 ---
 
