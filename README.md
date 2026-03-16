@@ -4,17 +4,14 @@ This system helps schools register students, manage buses, mark attendance, and 
 ---
 
 ## ✨ Features
-- 🧾 Student Registration – Add and manage student profiles  
-- 🚌 Bus Registration – add buses and assign students to buses  
-- ✅ Attendance Tracking – Mark attendance daily for each bus  
-- 📊 Dashboard
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+- 🧾 **Student Registration** – Add and manage student profiles  
+- 🚌 **Bus Registration** – Register buses and assign students to buses  
+- ✅ **Attendance Tracking** – Mark daily attendance for each bus  
+- 📊 **Dashboard Overview** – View attendance summaries and reports  
+- 📥 **Export Reports** – Download attendance reports as CSV
 
 A web-based platform built to simplify student registration, attendance tracking, and school bus management.  
-It allows teachers to mark attendance, manage bus registration, and analyze attendance data from a centralized dashboard.
+It allows mark attendance, manage bus registration and analyze attendance data from a centralized dashboard.
 
 ---
 
@@ -57,33 +54,54 @@ The application will be available at `http://127.0.0.1:8000/`
 
 ## 📖 Usage
 
-- Access the dashboard to view overall statistics.
-- Register new students and buses.
-- Mark daily attendance for each bus.
-- View attendance reports.
+Register buses in the system.
+Register students and assign them to buses.
+Mark daily attendance for each bus.
+View attendance overview reports.
+Export attendance records as CSV.
 
 ---
 
-## �📸 Screenshots
+# 📸 Screenshots
 
-| Student Registration | Marking Attendance |
-|---------------------|------------------|
-| ![Student Registration]<img width="393" height="330" alt="student reg" src="https://github.com/user-attachments/assets/169b8f52-8a8f-4793-bba7-5608b092191d" />
-. | ![Marking Attendance]<img width="539" height="239" alt="mark attendance" src="https://github.com/user-attachments/assets/2ffa1b28-adf7-42b6-9eb4-de5c28a17f4f" />
- |
+## 🚌 Register Buses
+Register buses in the system and manage available school transport.
 
-| Bus Registration | Attendance View | Dashboard |
-|------------|--------------|-----------|
-| ![Bus Registration]<img width="405" height="296" alt="bus reg" src="https://github.com/user-attachments/assets/a1d5dc3a-803b-4f52-96ad-b4585f9b8229" />
- | ![Attendance View]<img width="504" height="310" alt="attendance" src="https://github.com/user-attachments/assets/131cb368-a6d3-420d-a93e-fb61659dded1" />
- | ![Dashboard]<img width="785" height="732" alt="studentreg and bus asignment" src="https://github.com/user-attachments/assets/3e2a8d9c-3601-4b8a-8106-1133c24116fb" />
+![Register Buses](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/register%20bus.PNG?raw=true)
+
+---
+
+## 👨‍🎓 Register Students & Assign to Buses
+Add new students and assign them to their respective school buses.
+
+![Register Buses](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/register%20student.PNG?raw=true)
+
+---
+
+## ✅ Mark Daily Attendance
+Mark student attendance for each bus on a daily basis.
+
+![Mark Attendance](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/mark%20attendance.PNG?raw=true)
+
+---
+
+## 📊 Attendance Overview Reports
+View attendance reports to monitor student bus usage.
+
+![Attendance Reports](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/daily%20attendance%20overview.PNG?raw=true)
+
+---
+
+## Dashboard
+![Dashboard](https://github.com/Sarleymwaka/studentbusmanagement/blob/main/screenshots/dashboard.PNG?raw=true)
 
 ---
 
 ## 🛠️ Tech Stack
 - Backend: Python, Django  
-- Database: SQLite  
-- Frontend: HTML, CSS, JavaScript  
+- Database: postgresql(superbase)
+- Frontend: HTML, CSS, JavaScript
+  
 
 ---
 
